@@ -60,7 +60,7 @@ const Products = () => {
             {/* Product Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                 {currentProducts.map((product) => (
-                    <ProductCard product={product} handleAddToCart={handleAddToCart} key={product.id} />
+                    <ProductCard product={product} handleAddToCart={(e, product) => handleAddToCart(e, product)} key={product.id} />
                 ))}
             </div>
 

@@ -12,7 +12,7 @@ const CartItem = ({ item, dispatch, removeFromCart }) => {
             {/* Remove Item Icon Button */}
             <button
                 title="Remove Item"
-                onClick={() => dispatch(removeFromCart(item.id)) /*console.log("Dispatch Remove Item:", item.id) */}
+                onClick={() => dispatch(removeFromCart(item.id))}
                 className="text-slate-400 hover:text-red-600 p-2 transition-colors cursor-pointer"
             >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
