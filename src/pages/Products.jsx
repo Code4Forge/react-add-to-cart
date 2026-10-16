@@ -54,7 +54,7 @@ const Products = () => {
             {/* Category Tabs Filter Component */}
             <CategoryTabs
                 selectedCategory={selectedCategory}
-                onSelectCategory={setSelectedCategory}
+                onSelectCategory={(value) => setSelectedCategory(value)}
             />
 
             {/* Product Grid */}
