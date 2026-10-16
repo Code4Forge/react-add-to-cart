@@ -21,7 +21,7 @@ const SearchBar = ({ onSearch }) => {
     };
 
     return (
-        <div className="w-full max-w-7xl mx-auto mb-6 sticky z-5 top-20">
+        <div className="w-full max-w-7xl mx-auto mb-6 sticky z-5 top-20 rounded-2xl shadow-md">
             <div className="relative flex items-center">
                 {/* Search Icon */}
                 <div className="absolute left-4 text-slate-400 pointer-events-none">
