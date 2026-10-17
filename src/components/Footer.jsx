@@ -10,7 +10,7 @@ const Footer = () => {
                     My<label className='font-black'>CART</label>
                 </div>
                 <p className="text-sm text-slate-500">
-                    &copy; {new Date().getFullYear()} EduPortal. All rights reserved.
+                    &copy; {new Date().getFullYear()} My CART. All rights reserved.
                 </p>
             </div>
         </footer>

@@ -8,7 +8,6 @@ const CartItem = ({ item, dispatch, removeFromCart, increaseQty, decreaseQty }) 
             <div className="flex-1">
                 <h3 className="text-sm font-bold text-slate-800 line-clamp-1">{item.name}</h3>
 
-                {/* Quantity Controls and Display */}
                 <div className="flex items-center gap-2 mt-1">
                     <button
                         onClick={() => dispatch(decreaseQty(item.id))}
@@ -34,7 +33,6 @@ const CartItem = ({ item, dispatch, removeFromCart, increaseQty, decreaseQty }) 
                 </p>
             </div>
 
-            {/* Remove Item Icon Button */}
             <button
                 title="Remove Item"
                 onClick={() => dispatch(removeFromCart(item.id))}

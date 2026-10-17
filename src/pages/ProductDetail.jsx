@@ -50,7 +50,6 @@ const ProductDetail = () => {
 
             <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-10 grid grid-cols-1 md:grid-cols-2 gap-10">
 
-                {/* Left Side: Multiple Images Gallery */}
                 <div className="space-y-4">
                     <div className="h-80 sm:h-96 rounded-2xl overflow-hidden border border-slate-100 bg-slate-50">
                         <img src={selectedImage} alt={product.name} className="w-full h-full object-cover" />
@@ -70,7 +69,6 @@ const ProductDetail = () => {
                     </div>
                 </div>
 
-                {/* Right Side: Details & Action */}
                 <div className="flex flex-col justify-between">
                     <div>
                         <div className="flex items-center justify-between mb-3">
