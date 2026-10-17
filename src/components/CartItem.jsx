@@ -1,14 +1,39 @@
-import React from 'react'
+import React from 'react';
 
-const CartItem = ({ item, dispatch, removeFromCart }) => {
+const CartItem = ({ item, dispatch, removeFromCart, increaseQty, decreaseQty }) => {
     return (
-        <div key={item.id} className="flex items-center gap-4 p-3 bg-slate-50 rounded-xl border border-slate-100">
+        <div className="flex items-center gap-4 p-3 bg-slate-50 rounded-xl border border-slate-100">
             <img src={item.images[0]} alt={item.name} className="w-16 h-16 object-cover rounded-lg border border-slate-200" />
+
             <div className="flex-1">
                 <h3 className="text-sm font-bold text-slate-800 line-clamp-1">{item.name}</h3>
-                <p className="text-xs text-slate-500">Qty: {item.quantity}</p>
-                <p className="text-sm font-semibold text-indigo-600 mt-1">${(item.price).toFixed(2)}</p>
+
+                {/* Quantity Controls and Display */}
+                <div className="flex items-center gap-2 mt-1">
+                    <button
+                        onClick={() => dispatch(decreaseQty(item.id))}
+                        className="w-6 h-6 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 text-xs font-bold cursor-pointer transition-colors"
+                        title="Decrease quantity"
+                    >
+                        -
+                    </button>
+
+                    <span className="text-xs font-semibold text-slate-700">Qty: {item.quantity}</span>
+
+                    <button
+                        onClick={() => dispatch(increaseQty(item.id))}
+                        className="w-6 h-6 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-100 text-xs font-bold cursor-pointer transition-colors"
+                        title="Increase quantity"
+                    >
+                        +
+                    </button>
+                </div>
+
+                <p className="text-sm font-semibold text-indigo-600 mt-1">
+                    ${(item.price * item.quantity).toFixed(2)}
+                </p>
             </div>
+
             {/* Remove Item Icon Button */}
             <button
                 title="Remove Item"
@@ -20,7 +45,7 @@ const CartItem = ({ item, dispatch, removeFromCart }) => {
                 </svg>
             </button>
         </div>
-    )
-}
+    );
+};
 
-export default CartItem
+export default CartItem;

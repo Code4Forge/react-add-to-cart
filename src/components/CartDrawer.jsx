@@ -1,5 +1,5 @@
 import React from "react";
-import { clearCart, removeFromCart } from "../app/slices/cartSlice";
+import { clearCart, removeFromCart, increaseQty, decreaseQty } from "../app/slices/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import CartItem from "./CartItem";
 
@@ -57,7 +57,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
                             <p className="text-center text-slate-500 py-10 text-sm">Your cart is empty.</p>
                         ) : (
                             cartItems.map((item) => (
-                                <CartItem item={item} dispatch={dispatch} removeFromCart={removeFromCart} />
+                                <CartItem key={item.id} item={item} dispatch={dispatch} removeFromCart={removeFromCart} increaseQty={increaseQty} decreaseQty={decreaseQty} />
                             ))
                         )}
                     </div>
